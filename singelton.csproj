@@ -49,9 +49,9 @@
     <Compile Include="FactoryPattern\CarFactory.cs" />
     <Compile Include="FactoryPattern\SedanCar.cs" />
     <Compile Include="FactoryPattern\SuvCar.cs" />
-    <Compile Include="FactoryPattern\TireLarg.cs" />
-    <Compile Include="FactoryPattern\TireSmall.cs" />
-    <Compile Include="FactoryPattern\TireXLarg.cs" />
+    <Compile Include="FactoryPattern\ITireLarg.cs" />
+    <Compile Include="FactoryPattern\ITireSmall.cs" />
+    <Compile Include="FactoryPattern\ITireXLarg.cs" />
     <Compile Include="FactoryPattern\TruckCar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
