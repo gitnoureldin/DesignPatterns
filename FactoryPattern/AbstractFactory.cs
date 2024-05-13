@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace dsignPatterns.FactoryPattern
 {
-    class TruckCar : Car
+    interface AbstractFactory
     {
-        public TruckCar()
-        {
-            carName = "Truck";
-            modelNumber = 2019;
-        }
+        void getYourTire(string tireType);
 
+        Car getYourCar(string type);
     }
 }

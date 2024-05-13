@@ -8,12 +8,35 @@ using System.Threading.Tasks;
 
 namespace dsignPatterns.FactoryPattern
 {
-    class CarFactory
+    class CarFactory : AbstractFactory
     {
 
-        public Car getYourCar(string carType)
+        public void getYourTire(string tireType)
         {
-            switch (carType)
+            switch (tireType)
+            {
+                case "s":
+                    new TireSmall().drowSmallTire();
+                    break;
+
+                case "u":
+                    new TireLarge().drowLargTire();
+                    break;
+
+
+                default :
+                  new TireXLarg().drowXLargTire();
+                    break;
+
+                //default:
+                //    throw new ArgumentException("Invalid car tire specified"); // to make sure all pathes return the rigth value
+
+            }
+        }
+
+        public Car getYourCar(string type)
+        {
+            switch (type)
             {
                 case "s":
                     return new SedanCar();

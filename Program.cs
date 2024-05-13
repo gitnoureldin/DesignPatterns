@@ -15,21 +15,23 @@ namespace singelton
             Car car = null;
 
             Console.WriteLine("select Your Car type,\n s = Sedan,\n U = SUV,\n T= Truck,\n");
-            string carType = Console.ReadLine();
+            string type = Console.ReadLine();
 
-            car = (new CarFactory()).getYourCar(carType);
+            AbstractFactory order = new CarFactory();
 
-        
+            car = order.getYourCar(type);
             runCommand(car);
+            order.getYourTire(type);
+
 
             Console.ReadKey(true);
-
         }
 
         static void runCommand (Car car)
         {
             car.RunCar();
             car.ShowCar();
+
         }
 
     }

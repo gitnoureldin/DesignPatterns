@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace dsignPatterns.FactoryPattern
 {
-    class TruckCar : Car
+    interface ITireLarg
     {
-        public TruckCar()
-        {
-            carName = "Truck";
-            modelNumber = 2019;
-        }
+        void drowLargTire();
+    }
 
+    class TireLarge : ITireLarg
+    {
+        public void drowLargTire()
+        {
+            Console.WriteLine("The Large Tire");
+        }
     }
 }

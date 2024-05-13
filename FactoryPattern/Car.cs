@@ -13,12 +13,12 @@ namespace dsignPatterns.FactoryPattern
 
         public void RunCar()
         {
-            Console.WriteLine(carName + "is running");
+            Console.WriteLine(carName + " is running");
         }
 
         public void ShowCar()
         {
-            Console.WriteLine(modelNumber + "is showing");
+            Console.WriteLine(modelNumber + " is showing");
         }
 
 
