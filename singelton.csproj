@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="FactoryPattern\Car.cs" />
+    <Compile Include="FactoryPattern\CarFactory.cs" />
     <Compile Include="FactoryPattern\SedanCar.cs" />
     <Compile Include="FactoryPattern\SuvCar.cs" />
     <Compile Include="FactoryPattern\TruckCar.cs" />
