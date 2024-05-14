@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builder\IRobotBuilder.cs" />
+    <Compile Include="Builder\IRobotPlan.cs" />
+    <Compile Include="Builder\oldRobotBuilder.cs" />
+    <Compile Include="Builder\Robot.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="FactoryPattern\AbstractFactory.cs" />
     <Compile Include="FactoryPattern\Car.cs" />
