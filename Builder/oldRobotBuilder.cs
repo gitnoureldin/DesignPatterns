@@ -39,5 +39,10 @@ namespace dsignPatterns.Builder
         {
             robot.setRobotLegs("Legs are ready");
         }
+
+        public Robot getRobot()
+        {
+            return robot;
+        }
     }
 }

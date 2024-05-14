@@ -12,5 +12,7 @@ namespace dsignPatterns.Builder
         void buildRobotArms();
         void buildRobotLegs();
         void buildRobotBody();
+
+        Robot getRobot();
     }
 }

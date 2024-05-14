@@ -25,7 +25,7 @@ namespace dsignPatterns.Builder
 
         public void setRobotHead(string Head)
         {
-            RobotBody = Head;
+            RobotHead = Head;
         }
 
         public void setRobotLegs(string Legs)
@@ -45,7 +45,7 @@ namespace dsignPatterns.Builder
 
         public string getRobotHead()
         {
-            return RobotBody;
+            return RobotHead;
         }
 
         public string getRobotLegs()

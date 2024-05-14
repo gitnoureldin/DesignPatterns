@@ -47,6 +47,7 @@
     <Compile Include="Builder\IRobotPlan.cs" />
     <Compile Include="Builder\oldRobotBuilder.cs" />
     <Compile Include="Builder\Robot.cs" />
+    <Compile Include="Builder\RobotBuilder.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="FactoryPattern\AbstractFactory.cs" />
     <Compile Include="FactoryPattern\Car.cs" />
