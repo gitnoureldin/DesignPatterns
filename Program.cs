@@ -4,46 +4,64 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using dsignPatterns.Builder;
+//using dsignPatterns.Builder;
 using System.Threading;
+using System.Runtime.InteropServices;
+using dsignPatterns.Prototype;
+using static dsignPatterns.Prototype.Robot;
 
 namespace singelton
 {
     class Program
     {
+
+
         static void Main(string[] args)
         {
-            IRobotBuilder oldRobotBuilder = new oldRobotBuilder();      // the old way that goes to the class and call the methodes one by one 
-            RobotBuilder robotBuilder = new RobotBuilder(oldRobotBuilder); // the new way 
+            Robot robot1 = new Robot();
+            robot1.Age = 42;
+            robot1.BirthDate = Convert.ToDateTime("1977-01-01");
+            robot1.Name = "John Doe";
+            robot1.idInfo = new IdInfno(606);
 
-            robotBuilder.makeRobot();
+            Robot robot2 = robot1.ShallowCopy();
+            Robot robot3 = robot1.DeepCopy();
+            Robot robot4 = robot1;
 
-            Robot robot = robotBuilder.getRobot();
+            Console.WriteLine("Original Values of robot1, robot2, robot3, robot4");
+            Console.WriteLine("robot1 instance values: ");
+            DisplayValues(robot1);
+            Console.WriteLine("robot2 instance values: ");
+            DisplayValues(robot2);
+            Console.WriteLine("robot3 instance values: ");
+            DisplayValues(robot3);
+            Console.WriteLine("robot4 instance values: ");
+            DisplayValues(robot4);
 
-            if (robot != null)
-            {
-                Console.Write(" Head: ");
-                Thread.Sleep(1000);         // 1000 milliseconds delay (1 second) to give some motion :) 
+            robot1.Age = 32;
+            robot1.BirthDate = Convert.ToDateTime("1900-02-02");
+            robot1.Name = "New Name";
+            robot1.idInfo.IdNumber = 707;
 
-                Console.WriteLine(robot.getRobotHead());
+            Console.WriteLine("\n Values of robot1, robot2, robot3, robot4 AFTER CHANGES OF Robot1");
+            Console.WriteLine("robot1 instance values: ");
+            DisplayValues(robot1);
+            Console.WriteLine("robot2 instance values: ");
+            DisplayValues(robot2);
+            Console.WriteLine("robot3 instance values: ");
+            DisplayValues(robot3);
+            Console.WriteLine("robot4 instance values: ");
+            DisplayValues(robot4);
 
-                Console.Write("\n Arms: ");
-                Thread.Sleep(1000);
-                Console.WriteLine(robot.getRobotArms());
 
-                Console.Write("\n Body: ");
-                Thread.Sleep(1000);
-                Console.WriteLine(robot.getRobotBody());
-
-                Console.Write("\n Legs: ");
-                Thread.Sleep(1000);
-                Console.WriteLine(robot.getRobotLegs());
-                Thread.Sleep(1000);
-
-            }
-            Console.WriteLine("\n your robot is completed!");
-            
             Console.ReadKey(true);
+        }
+
+        public static void DisplayValues(dsignPatterns.Prototype.Robot robot)
+        {
+            Console.WriteLine("  Name {0:s}, Age: {1:d}, BirthDate: {2:MM/dd/yy}  ",
+                robot.Name, robot.Age, robot.BirthDate);
+            Console.WriteLine(" ID# {0:d}", robot.idInfo.IdNumber);
         }
 
     }
